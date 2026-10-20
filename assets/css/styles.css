@@ -1,0 +1,201 @@
+
+html {
+    height: 100%;
+}
+
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Bangers", system-ui;
+}
+
+
+
+body {
+    min-height: 100svh;
+    background-image: url('../img/background2.jpg');
+    background-size: cover;
+    background-position: center;
+  
+}
+
+
+
+h1 {
+    font-size: 72px;
+    color: white;
+    line-height: 1.15;
+}
+
+
+
+p {
+    color: white;
+    font-size: 30px;
+    text-align: center;
+    margin-top: 20px;
+}
+.nome {
+    color: #ff3cac;
+    font-size: clamp(100px, 18vw, 300px);
+    position:absolute;
+    top: 16px;
+    margin-top: 0;
+    line-height: 1.2;
+    text-align: center;
+    width: 100%;
+}
+
+.personagem {
+    position: absolute;
+    bottom: 120px;
+    left: 0;
+    right:0;
+    width: min(48vw, 760px);
+    height: min(72svh, 700px);
+    object-fit: contain;
+    object-position: center bottom;
+    margin: auto;
+    
+}
+
+.textos {
+   position:absolute;
+   bottom: 40px;
+   left: 40px;
+   width: min(28vw, 440px);
+   display: flex;
+   flex-direction: column;
+   gap: 18px;
+   z-index: 1;
+   text-shadow: 0 2px 8px #000;
+}
+
+.textos p {
+    margin-top: 0;
+    text-align: left;
+}
+
+.etiqueta {
+   font-size: 26px;
+   color: #ffd319;
+}
+
+.texto-apoio {
+   font-size: 24px;
+   color: white;
+   
+}
+
+.menu {
+    position: absolute;
+    bottom: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 20px;
+    z-index: 3;
+}
+
+.avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: top;
+    border: 2px solid white;  
+
+}    
+
+.voce {
+   background: linear-gradient(145deg, #ffe978, #ffd319);
+   color: #24102f;
+   width: 64px;
+   height: 64px;
+   padding: 0;
+   border: 2px solid white;
+   display: grid;
+   place-items: center;
+   overflow: hidden;
+   box-shadow: 0 0 20px #ffd31955;
+   border-radius: 50%;
+   cursor: pointer;
+   
+}
+
+.seu-personagem { position: relative; }
+.icone-camera { width: 32px; height: 32px; }
+.miniatura-voce { width: 100%; height: 100%; object-fit: cover; object-position: top; }
+.icone-camera[hidden], .miniatura-voce[hidden], .gerar-outra[hidden] { display: none; }
+.gerar-outra {
+    position: absolute;
+    bottom: calc(100% + 12px);
+    right: 0;
+    white-space: nowrap;
+    padding: 10px 14px;
+    border-radius: 10px;
+    border: 1px solid #ffd319;
+    background: #24102f;
+    color: #ffd319;
+    font-family: 'Poppins', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+}
+.voce:hover { filter: brightness(1.1); }
+.voce:focus-visible, .gerar-outra:focus-visible { outline: 3px solid white; outline-offset: 4px; }
+.gerar-outra:disabled { opacity: 0.6; cursor: wait; }
+
+.voce:disabled {
+    opacity: 0.6;
+    cursor: wait;
+}
+
+.status-foto {
+    position: fixed;
+    top: 16px;
+    bottom: auto;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: min(90vw, 520px);
+    padding: 12px 18px;
+    border-radius: 12px;
+    background: rgba(0, 0, 0, 0.85);
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    z-index: 2;
+}
+
+.status-foto:empty {
+    display: none;
+}
+
+.letra-c {
+    margin-right: 0.12em;
+}
+
+.letra-j {
+    margin-left: 0.12em;
+}
+
+@media (max-width: 900px) {
+    h1 { font-size: clamp(32px, 6vw, 54px); }
+    .textos { left: 20px; bottom: 130px; width: 32vw; gap: 14px; }
+    .etiqueta { font-size: 20px; }
+    .texto-apoio { font-size: 18px; }
+    .personagem { left: auto; right: 3vw; width: 60vw; height: 65svh; }
+}
+
+@media (max-width: 600px) {
+    body { min-height: max(100svh, 700px); position: relative; }
+    .nome { top: 20px; font-size: clamp(80px, 25vw, 140px); }
+    .personagem { top: 145px; bottom: auto; left: 0; right: 0; width: 90vw; height: 300px; }
+    .textos { left: 20px; right: 20px; bottom: 112px; width: auto; gap: 8px; }
+    h1 { font-size: 34px; }
+    h1 br { display: none; }
+    .etiqueta { font-size: 18px; }
+    .texto-apoio { font-size: 16px; }
+    .menu { bottom: 24px; gap: 16px; }
+}
